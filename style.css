@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;600&family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #191C27;
+}
+
+h1-6 { 
+  font-family: 'Barlow', sans-serif;
+}
+
+p  {
+  font-family: 'Roboto', sans-serif;
+}
+
+.dashboard {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(9, minmax(200px, auto));
+    /* grid-auto-rows: minmax(100px, auto); */
+    /* grid-auto-flow: row; */
+    grid-template-areas:
+      "sd sd hd   hd   hd   hd   hd   hd   hd"
+      "sd sd main main main main main main main"
+      "sd sd main main main main main main main"
+      "sd sd main main main main main main main"
+      "sd sd main main main main main main main";
+}
+
+header {
+    grid-area: hd;
+    background-color: #0b5394;
+}
+
+.searchbar {
+  margin: 20px;
+  background-color: #4654e1;
+  width: 500px;
+  height: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.searchbar > input {
+  color: #fff;
+  background-color: #4654e1;
+  height: inherit;
+  width: inherit;
+  border: none;
+  padding: 6px 10px;
+    
+}
+
+input::placeholder {
+  background-color: #4654e1;
+  color: #222;
+  outline: none;
+  padding: 6px 10px;
+}
+
+.searchbar > button {
+  background-color: inherit;
+  border: none;
+  width: 30px;
+  height: inherit;
+}
+
+
+
+
+nav .left {
+  padding: 10px;
+}
+
+.logo {
+  width: 20px;
+}
+
+aside {
+    grid-area: sd;
+    background-color: #cc0000;
+}
+
+main {
+    grid-area: main;
+    background-color: #eeeeee;
+}
+
+
+
