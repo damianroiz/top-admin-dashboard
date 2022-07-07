@@ -6,8 +6,43 @@
   padding: 0;
 }
 
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
 body {
-  color: #191C27;
+  color: #fff;
+}
+
+main { 
+  display: block;
+}
+
+small {
+  font-size: 80%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+ul {
+  list-style-type: none;
+  display: inline-block;
+  text-align:left;
 }
 
 h1-6 { 
@@ -21,47 +56,74 @@ p  {
 .dashboard {
     display: grid;
     height: 100vh;
-    grid-template-columns: repeat(9, minmax(200px, auto));
+    grid-template-columns: repeat(4, minmax(200px, auto));
     /* grid-auto-rows: minmax(100px, auto); */
     /* grid-auto-flow: row; */
     grid-template-areas:
-      "sd sd hd   hd   hd   hd   hd   hd   hd"
-      "sd sd main main main main main main main"
-      "sd sd main main main main main main main"
-      "sd sd main main main main main main main"
-      "sd sd main main main main main main main";
+      "sd hd hd hd"
+      "sd main main main"
+      "sd main main main"
+      "sd main main main"
+      "sd main main main";
 }
 
 header {
     grid-area: hd;
-    background-color: #0b5394;
+      
+}
+
+.menu-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #0b5394; 
+  display: grid;
+  grid-template-columns: repeat(2 minmax(500px auto));
+  grid-template-areas: 
+                       "searchbar usermenu"
+                       "greet menu-btn";
+  border: 2px solid blue;
+}
+
+
+form {
+  border: 1px solid green;
+  grid-area: searchbar;
+}
+
+.searcharea {
+  width: 500px;
+  height: 30px;
+  
 }
 
 .searchbar {
-  margin: 20px;
   background-color: #4654e1;
-  width: 500px;
-  height: 30px;
+  width:80%;
+  align-self: center;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
+  grid-area: search;
+  border: 1px solid red;
 }
 
 .searchbar > input {
   color: #fff;
   background-color: #4654e1;
-  height: inherit;
-  width: inherit;
   border: none;
+  border-radius: 8px;
   padding: 6px 10px;
     
 }
 
 input::placeholder {
   background-color: #4654e1;
-  color: #222;
+  border-radius: 10px;
+  color: #fff;
   outline: none;
-  padding: 6px 10px;
+  padding: 10px;
+  border: none;
+  
 }
 
 .searchbar > button {
@@ -71,15 +133,85 @@ input::placeholder {
   height: inherit;
 }
 
+.logo {
+  height: 60px;
+  
+}
 
+.greet {
+  display: grid;
+  gap: 10px;
+  grid-area: greet;
+  justify-self: start;
+  align-content: center;
+  align-self: center;
+  grid-auto-flow: column;
+  border: 1px solid red;
+}
+
+.greet p:nth-child(2),
+.usermenu p{
+  padding-top: 5px;
+  font-weight: 600;
+  color: lightgreen;
+}
+
+.usermenu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: baseline;
+  align-items: center;
+  gap: 5px;
+  width: 200px;
+  grid-area: usermenu;
+  justify-self: end;
+  margin-right: 48px;
+  border: 1px solid red;
+}
+
+
+
+.bell {
+  width: 50px;
+  margin-right: -12px;
+  align-self: start;
+}
+
+.logo-text {
+align-self: center;
+}
+
+.menu-btns {
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  justify-content: center;
+  grid-auto-flow: row dense;
+  grid-area: menu-btn;
+  gap: 25px;
+  justify-self: end;
+  align-self: end;
+  padding-top: 12px;
+  border: 1px solid red;
+}
+
+.menu-btns > li {
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 6px;
+  background-color: green;
+  text-align: center;
+  justify-self: center;
+  border-radius: 8px;
+  border: 1px solid red;
+
+}
 
 
 nav .left {
   padding: 10px;
-}
-
-.logo {
-  width: 20px;
 }
 
 aside {
@@ -87,10 +219,21 @@ aside {
     background-color: #cc0000;
 }
 
-main {
-    grid-area: main;
-    background-color: #eeeeee;
+.side-menu {
+  display: grid;
+  align-items: center;
+  grid-gap: 20px;
+  grid-template-columns: minmax(200px 1fr);
+  margin-top: 20px;
 }
 
+.side-menu li {
+text-align: center;
+padding: center;
+}
 
-
+main {
+  height: inherit;
+  grid-area: main;
+  background-color: #eeeeee;
+}

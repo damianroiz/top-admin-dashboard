@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
   <title>Dashboard Project</title>
 </head>
@@ -13,22 +13,58 @@
 
 <div class="dashboard">
     <header>
-      <nav>
-       <div class=left>
-        <form class="searchbar">
-          <input type="text" placeholder="Search..." name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <div class="restaurant-info">
-        <img src="./sources/burger-logo.jpg" alt='company logo' class="logo">
-        <p>Hi, there</p>
-        <p>BurgerNation</p>
+      <div class="menu-container">
+          <!----------------------------search area--------------------->
+          <div class=searcharea>
+            <form class=searchbar>
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+          </div>
+          <!----------------------------greet logo--------------------->
+        <div class="greet">
+          <img src="./sources/monster.png" alt='company logo' class="logo">
+          <div class="logo-text">
+            <p>Hi, there</p>
+            <p>Morgan Oakley</p>
+          </div>
         </div>
+        <!----------------------------username--------------------->
+        <div class="usermenu">
+         <i class="fa-solid fa-bell fa-2x"></i>
+          <img src="./sources/monster.png" alt='company logo' class="logo">
+          <p>@Morgan</p>
         </div>
-      </nav>
+        <!--------------------------menu buttons--------------------->
+        <ul class="menu-btns">
+        <li>News</li>
+        <li>Upload</li>
+        <li>Share</li>
+        </ul>
+        
+      </div>
     </header>
-    <aside></aside>
-    <main></main>
+    
+    <aside>
+      <ul class="side-menu">
+        <li>Home</li>
+        <li>Profile</li>
+        <li>Messages</li>
+        <li>History</li>
+        <li>Tasks</li>
+        <li>Communities</li>
+        <li class="second-part">Settings</li>
+        <li>Support</li>
+        <li>Privacy</li>
+
+      </ul>
+
+    </aside>
+
+    <main class="projects">
+
+
+    </main>
 </div>
 
 </body>
