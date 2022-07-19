@@ -61,10 +61,10 @@ p  {
     /* grid-auto-flow: row; */
     grid-template-areas:
       "sd hd hd hd"
-      "sd main main main"
-      "sd main main main"
-      "sd main main main"
-      "sd main main main";
+      "sd proj proj anno"
+      "sd proj proj anno"
+      "sd proj proj anno"
+      "sd proj proj anno";
 }
 
 header {
@@ -102,8 +102,10 @@ form {
   align-self: center;
   border-radius: 10px;
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   grid-area: search;
+  border-radius: 8px;
   border: 1px solid red;
 }
 
@@ -122,16 +124,21 @@ input::placeholder {
   color: #fff;
   outline: none;
   padding: 10px;
-  border: none;
-  
+  border-radius: 8px;
 }
 
-.searchbar > button {
+.searchbar button {
   background-color: inherit;
   border: none;
   width: 30px;
   height: inherit;
+  justify-self: flex-end;
+  border-radius: 8px;
 }
+
+.seachbard button i {
+}
+
 
 .logo {
   height: 60px;
@@ -214,6 +221,12 @@ nav .left {
   padding: 10px;
 }
 
+/*
+///////////////////////
+////////////////////// ASIDE
+//////////////////////
+*/
+
 aside {
     grid-area: sd;
     background-color: #cc0000;
@@ -232,8 +245,82 @@ text-align: center;
 padding: center;
 }
 
+/*
+///////////////////////
+////////////////////// MAIN
+//////////////////////
+*/
+
+main h1 {
+  color: #222;
+  padding: 30px;
+}
+
 main {
   height: inherit;
-  grid-area: main;
+  grid-area: proj;
   background-color: #eeeeee;
+  border: 2px solid pink;
+  padding: 12px 35px;
+
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 1fr));
+  justify-items: center;
+  gap: 25px;
+  grid-auto-flow: rows;
+}
+
+.project-card {
+  padding: 16px 28px;
+  font: 400 12px/17px "barlow", sans-serif; 
+  heigh: 220px;
+  width: 350px;
+  display: grid;
+  align-items: center;
+  background-color: #fff;
+  color: #222;
+  border-left: 5px solid #ffd700;
+  border-radius: 8px;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.1);
+}
+
+
+.project-card p {
+  margin-block: 12px;
+}
+
+.card-icons {
+  display: grid;
+  justify-content: end;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3px;
+  justify-self: end;
+}
+
+.card-icons i:nth-child(2) {
+  margin: 0 5px 0 3px;
+}
+
+/*
+///////////////////////
+////////////////////// ANNOUNCEMENTS
+//////////////////////
+*/
+
+.announcements {
+  grid-area: anno;
+  background-color: #eeeeee;
+  padding: 12px 35px;
+  
+}
+
+.top-chart {
+  color: #222;
+  display: grid;
+  grid-template-rows: repeat(3, minmax(100px 1fr));
+  padding: 35px;
+  border: 1px solid red;
 }
