@@ -97,12 +97,17 @@ form {
 }
 
 .searcharea {
-  width: 450px;
+  width: 350px;
   height: 30px;
+  transition: width 70ms ease-in-out 8ms;
+}
+
+.searcharea:hover {
+  width: 380px;
 }
 
 .searchbar {
-  background-color: #4654e1;
+  background-color: #1D2951;
   width: inherit;
   align-self: center;
   border-radius: 10px;
@@ -111,25 +116,27 @@ form {
   flex-direction: row;
   grid-area: search;
   border-radius: 8px;
-  
+  border: 2px solid #fff;
 }
 
-.searchbar > input {
-  background-color: #4654e1;
+
+.searchbar > input[type="text"] {
+  background-color: #1D2951;
   border: none;
   border-radius: 8px;
   padding: 6px 10px;
   width: inherit;
+  outline: none;
 }
 
+
 input::placeholder {
-  background-color: #4654e1;
-  color: #fff;
+  background-color: #1D2951;
+  color: #fff !important;
   border-radius: 10px;
   outline: none;
   padding: 10px;
-  width: inherit;
-  
+  width: inherit; 
 }
 
 input::placeholder:hover {
@@ -141,16 +148,15 @@ input::placeholder:hover {
   border: none;
   width: 30px;
   height: inherit;
-  justify-self: flex-end;
+  justify-self: center;
   border-radius: 8px;
-  cursor: pointer; 
   
 }
 
-.seachbard button i {
-  filter: invert(-1);
+button > i {
+  filter: invert(100);
+  padding-left: 10px;
 }
-
 
 .avatar {
   height: 60px;
@@ -199,6 +205,7 @@ input::placeholder:hover {
   margin-right: -12px;
   align-self: start;
   filter: invert(1);
+  cursor: pointer;
 }
 
 .logo-text {
