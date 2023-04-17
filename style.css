@@ -17,11 +17,6 @@ html {
 }
 
 
-
-main { 
-  display: block;
-}
-
 small {
   font-size: 80%;
 }
@@ -57,14 +52,13 @@ color: #413839;
 }
 
 body {
-  color: #fff; 
+  width: 100%;
+  color: #fff;
 }
 
 .dashboard {
     display: grid;
-    height: 100vh;
-    width: auto;
-    grid-template-columns: repeat(4, minmax(200px, auto));
+    grid-template-columns: repeat(4, minmax(200px, fill));
     grid-auto-flow: rows;
     grid-template-areas:
       "sd hd hd hd"
@@ -73,6 +67,7 @@ body {
       "sd proj proj anno"
       "sd proj proj anno";
 }
+
 
 header {
     grid-area: hd;
@@ -84,12 +79,16 @@ header {
   padding: 20px 35px;
   background-color: #0b5394; 
   display: grid;
-  grid-template-columns: repeat(2 minmax(500px auto));
-  grid-template-areas: 
-                       "searchbar usermenu"
-                       "greet menu-btn";
+  gap: 20px;
+  grid-template-columns: repeat(2 minmax(00px auto));
 }
 
+.menu-bottom {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
 
 form {
   border: 1px solid green;
@@ -108,7 +107,7 @@ form {
 
 .searchbar {
   background-color: #1D2951;
-  width: inherit;
+  width: 100%;
   align-self: center;
   border-radius: 10px;
   display: flex;
@@ -164,12 +163,14 @@ button > i {
 }
 
 .greet {
+  margin: 10px 0 0 15px;
   display: grid;
+  margin-right: 0;
   gap: 10px;
   grid-area: greet;
+  align-items: center;
   justify-self: start;
-  align-content: center;
-  align-self: center;
+  align-self: start;
   grid-auto-flow: column;
 }
 
@@ -186,7 +187,7 @@ button > i {
   color: lightgreen;
 }
 
-.usermenu {
+/* .usermenu {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: baseline;
@@ -196,15 +197,15 @@ button > i {
   grid-area: usermenu;
   justify-self: end;
   margin-right: 48px;
-}
+} */
 
 
 
 .bell {
   width: 50px;
   margin-right: -12px;
-  align-self: start;
   filter: invert(1);
+  justify-self: center;
   cursor: pointer;
 }
 
@@ -268,17 +269,20 @@ aside > div {
   align-items: baseline;
   justify-content: center;
   gap: 0px 10px;
+  padding: 15px;
 }
 
 aside > ul > li {
   width: 100%;
-  padding-left: 20%;
   display: grid;
   grid-auto-flow: column;
   align-items: baseline;
   justify-content: start;
   gap: 0px 12px;
+  padding-left: 25%;
 }
+
+
 
 li img {
 width: 18px;
@@ -294,7 +298,6 @@ aside > div > img {
   justify-items: start;
   grid-gap: 20px;
   grid-template-columns: minmax(150px, 1fr);
-  margin-top: 20px;
 }
 
 .side-menu li {
@@ -318,12 +321,9 @@ main h1, .announcements h1 {
   padding: 30px;
 }
 
-main h1 {
-  grid-column: span 2; 
-  justify-self: start;
-}
 
 main {
+  width: auto;
   height: 100%;
   grid-area: proj;
   background-color: #eeeeee;
@@ -371,12 +371,12 @@ main {
   margin: 0 5px 0 3px;
 }
 
+
 /*
 ///////////////////////
 ////////////////////// ANNOUNCEMENTS
 //////////////////////
 */
-
 
 
 .announcements {
@@ -456,4 +456,72 @@ main {
   color: #4C516D;
   font: 600 16px/20px "barlow", sans-serif;
   letter-spacing: 1.02px;
+}
+
+
+/*
+//////////////////////////
+//////////////////////////////// Media Queries
+//////////////////////////
+*/
+
+@media screen and (max-width: 780px) {
+  .menu-container {
+  width: 100%;
+  padding: 20px 35px;
+  background-color: #0b5394; 
+  display: grid;
+  grid-template-columns: repeat(1 minmax(500px auto));
+  grid-template-areas: 
+                       "searchbar usermenu"
+                       "greet menu-btn";
+  }
+  .dashboard {
+    display: grid;
+    height: 100vh;
+    width: auto;
+    min-width: auto;
+    grid-template-columns: 1fr;
+    grid-auto-flow: rows;
+    grid-template-areas:
+      "hd"
+      "sd"
+      "proj"
+      "proj"
+      "anno";  
+  }
+
+  .menu-container {
+  width: 100%;
+  padding: 20px 35px;
+  background-color: #0b5394; 
+  display: grid;
+  grid-template-columns: repeat(1 minmax(500px auto));
+  grid-template-areas: 
+                       "greet"
+                       "searchbar"
+                       "menu-btn";
+  justify-content: center;
+  }
+  
+  .menu-bottom {
+    flex-direction: column;
+  }
+
+  .side-menu {
+  justify-items: center;
+  }
+
+  .card-container {
+  display: inline-grid;
+  grid-template-columns: minmax(420px, 1fr);
+  justify-items: start;
+  align-items: space-around;
+  grid-auto-flow: rows;
+  }
+
+  aside > ul > li {
+  padding-left: 35vw;
+  width: 100%;
+  }
 }
